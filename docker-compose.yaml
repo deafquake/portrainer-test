@@ -1,7 +1,7 @@
-version: '25'
+version: '19'
 services:
   spring_backend:
-    image: nbberk/anymaconn-be-arm64:nespak-5
+    image: nbberk/anymaconn-be-arm64:nespak-4
     ports:
       - "5000:5000"
     restart: always
