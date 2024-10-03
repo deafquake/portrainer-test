@@ -1,4 +1,4 @@
-version: '19'
+version: '69'
 services:
   spring_backend:
     image: nbberk/anymaconn-be-arm64:nespak-5
