@@ -1,0 +1,25 @@
+version: '1'
+services:
+  spring_backend:
+    image: nbberk/anymaconn-be-arm64:nespak-5
+    ports:
+      - "5000:5000"
+    restart: always
+    networks:
+      - my_network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  
+  react_frontend:
+    image: nbberk/anymaconn-fe-arm64:nespak-5
+    ports:
+      - "14000:14000"
+    depends_on:
+      - spring_backend
+    restart: always
+    networks:
+      - my_network
+  
+networks:
+  my_network:
+    driver: bridge
